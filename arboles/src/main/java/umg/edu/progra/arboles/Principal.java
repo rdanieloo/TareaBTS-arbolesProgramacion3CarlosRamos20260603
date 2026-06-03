@@ -165,5 +165,27 @@ public class Principal {
             System.out.println("Excepcion esperada: " + e.getMessage());
         }
         
+        //Carlos Ramos 0905 23 14141
+        
+        // PROBLEMA 5 — invertir (espejo)
+        
+        ArbolBinarioBusqueda arbol5 = new ArbolBinarioBusqueda();
+        int[] vals5 = { 50, 30, 70, 20, 40, 60, 80, 10 };
+        for (int v : vals5) arbol5.insertar(v);
+
+        System.out.println("\n========== PROBLEMA 5: invertir (espejo) ==========");
+        System.out.println("Antes de invertir:");
+        arbol5.imprimirArbol();
+        System.out.print("InOrden antes: ");
+        arbol5.inOrden();
+
+        arbol5.invertir();
+
+        System.out.println("Despues de invertir:");
+        arbol5.imprimirArbol();
+        System.out.print("InOrden despues (descendente): ");
+        arbol5.inOrden();
+
+        
     }
 }

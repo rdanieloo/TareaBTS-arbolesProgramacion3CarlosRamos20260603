@@ -368,6 +368,24 @@ public class ArbolBinarioBusqueda {
           }
           return nodo.dato;
       }
+      
+     //Carlos Ramos 0905 23 14141
+      
+     // PROBLEMA 5 — invertir (como espejo)
+     
+
+     public void invertir() {
+         invertirRecursivo(raiz);
+     }
+
+     private void invertirRecursivo(Nodo nodo) {
+         if (nodo == null) return;
+         Nodo temp = nodo.izquierdo;
+         nodo.izquierdo = nodo.derecho;
+         nodo.derecho = temp;
+         invertirRecursivo(nodo.izquierdo);
+         invertirRecursivo(nodo.derecho);
+     }
     
     
     // ============================================================
