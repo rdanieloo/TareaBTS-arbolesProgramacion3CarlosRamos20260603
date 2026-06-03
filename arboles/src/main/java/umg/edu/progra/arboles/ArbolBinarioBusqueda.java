@@ -333,6 +333,20 @@ public class ArbolBinarioBusqueda {
           return 1 + (izq > der ? izq : der);
       }
       
+       //Carlos Ramos 0905 23 14141
+      
+       // PROBLEMA 3 — esBSTValido
+      
+       public boolean esBSTValido() {
+           return validarBST(raiz, Integer.MIN_VALUE, Integer.MAX_VALUE);
+       }
+
+       private boolean validarBST(Nodo nodo, int min, int max) {
+           if (nodo == null) return true;
+           if (nodo.dato <= min || nodo.dato >= max) return false;
+           return validarBST(nodo.izquierdo, min, nodo.dato)
+               && validarBST(nodo.derecho, nodo.dato, max);
+       }
       
     
     // ============================================================

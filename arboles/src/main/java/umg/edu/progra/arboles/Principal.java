@@ -129,9 +129,24 @@ public class Principal {
         System.out.println("Visual del arbol desbalanceado:");
         desbalanceado.imprimirArbol();
         
+        //Carlos Ramos 0905 23 14141
         
+        // PROBLEMA 3 — esBSTValido
         
+        ArbolBinarioBusqueda arbol3 = new ArbolBinarioBusqueda();
+        int[] vals3 = { 50, 30, 70, 20, 40, 60, 80, 10 };
+        for (int v : vals3) arbol3.insertar(v);
 
+        System.out.println("\n========== PROBLEMA 3: esBSTValido ==========");
+        System.out.println("Arbol original es BST valido: " + arbol3.esBSTValido());
+
+        ArbolBinarioBusqueda roto = new ArbolBinarioBusqueda();
+        roto.insertar(50);
+        roto.insertar(30);
+        roto.insertar(70);
+        roto.getRaiz().izquierdo.dato = 99;
+        System.out.println("Arbol roto (99 en subarbol izquierdo): " + roto.esBSTValido());
+        
         
     }
 }
