@@ -110,6 +110,27 @@ public class Principal {
         System.out.println("Despues de insertar 5 -> Nodos: " + arbol1.contarNodos() + "  Tamanio: " + arbol1.tamanio());
         arbol1.eliminar(5);
         System.out.println("Despues de eliminar 5 -> Nodos: " + arbol1.contarNodos() + "  Tamanio: " + arbol1.tamanio());
+        
+        //Carlos Ramos 0905 23 14141
+        
+        // PROBLEMA 2 — esBalanceado
+        
+        ArbolBinarioBusqueda arbol2 = new ArbolBinarioBusqueda();
+        int[] vals2 = { 50, 30, 70, 20, 40, 60, 80, 10 };
+        for (int v : vals2) arbol2.insertar(v);
+
+        System.out.println("\n========== PROBLEMA 2: esBalanceado ==========");
+        System.out.println("Arbol principal balanceado: " + arbol2.esBalanceado());
+
+        ArbolBinarioBusqueda desbalanceado = new ArbolBinarioBusqueda();
+        int[] lineales = {1, 2, 3, 4, 5};
+        for (int v : lineales) desbalanceado.insertar(v);
+        System.out.println("Arbol lineal 1-2-3-4-5 balanceado: " + desbalanceado.esBalanceado());
+        System.out.println("Visual del arbol desbalanceado:");
+        desbalanceado.imprimirArbol();
+        
+        
+        
 
         
     }

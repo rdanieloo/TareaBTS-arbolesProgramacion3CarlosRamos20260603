@@ -314,6 +314,26 @@ public class ArbolBinarioBusqueda {
       return 1 + contarNodosRecursivo(nodo.izquierdo) + contarNodosRecursivo(nodo.derecho);
       }
     
+      //Carlos Ramos 0905 23 14141
+      
+      // PROBLEMA 2 — esBalanceado
+      
+
+      public boolean esBalanceado() {
+           return alturaBalanceada(raiz) != -2;
+      }
+
+      private int alturaBalanceada(Nodo nodo) {
+          if (nodo == null) return -1;
+          int izq = alturaBalanceada(nodo.izquierdo);
+          int der = alturaBalanceada(nodo.derecho);
+          if (izq == -2 || der == -2) return -2;
+          int diferencia = izq - der;
+          if (diferencia > 1 || diferencia < -1) return -2;
+          return 1 + (izq > der ? izq : der);
+      }
+      
+      
     
     // ============================================================
     // COLA INTERNA (lista enlazada simple) usada para BFS.
