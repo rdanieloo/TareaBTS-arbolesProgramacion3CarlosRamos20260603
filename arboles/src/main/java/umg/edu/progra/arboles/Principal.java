@@ -147,6 +147,23 @@ public class Principal {
         roto.getRaiz().izquierdo.dato = 99;
         System.out.println("Arbol roto (99 en subarbol izquierdo): " + roto.esBSTValido());
         
+        //Carlos Ramos 0905 23 14141
+    
+        // PROBLEMA 4 — ancestroComunMasBajo
+       
+        ArbolBinarioBusqueda arbol4 = new ArbolBinarioBusqueda();
+        int[] vals4 = { 50, 30, 70, 20, 40, 60, 80, 10 };
+        for (int v : vals4) arbol4.insertar(v);
+
+        System.out.println("\n========== PROBLEMA 4: ancestroComunMasBajo (LCA) ==========");
+        System.out.println("LCA(10, 40) = " + arbol4.ancestroComunMasBajo(10, 40));
+        System.out.println("LCA(10, 80) = " + arbol4.ancestroComunMasBajo(10, 80));
+        System.out.println("LCA(60, 80) = " + arbol4.ancestroComunMasBajo(60, 80));
+        try {
+            arbol4.ancestroComunMasBajo(10, 99);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Excepcion esperada: " + e.getMessage());
+        }
         
     }
 }

@@ -347,7 +347,28 @@ public class ArbolBinarioBusqueda {
            return validarBST(nodo.izquierdo, min, nodo.dato)
                && validarBST(nodo.derecho, nodo.dato, max);
        }
-      
+        
+      //Carlos Ramos 0905 23 14141
+       
+      // PROBLEMA 4 — ancestroComunMasBajo
+
+      public int ancestroComunMasBajo(int a, int b) {
+          if (!contiene(a) || !contiene(b)) {
+              throw new IllegalArgumentException("Uno o ambos valores no existen en el arbol");
+          }
+          return lcaRecursivo(raiz, a, b);
+      }
+
+      private int lcaRecursivo(Nodo nodo, int a, int b) {
+          if (a < nodo.dato && b < nodo.dato) {
+              return lcaRecursivo(nodo.izquierdo, a, b);
+          }
+          if (a > nodo.dato && b > nodo.dato) {
+              return lcaRecursivo(nodo.derecho, a, b);
+          }
+          return nodo.dato;
+      }
+    
     
     // ============================================================
     // COLA INTERNA (lista enlazada simple) usada para BFS.
