@@ -93,5 +93,24 @@ public class Principal {
          *     bajo (LCA) entre dos valores.
          *  5. Implementar la inversion del arbol (espejo).
          */
+        
+
+        //Carlos Ramos 0905 23 14141
+        
+        // PROBLEMA 1 — contarNodos recursivo
+
+        ArbolBinarioBusqueda arbol1 = new ArbolBinarioBusqueda();
+        int[] vals1 = { 50, 30, 70, 20, 40, 60, 80, 10 };
+        for (int v : vals1) arbol1.insertar(v);
+
+        System.out.println("\n========== PROBLEMA 1: contarNodos ==========");
+        System.out.println("Nodos (recursivo): " + arbol1.contarNodos());
+        System.out.println("Tamanio (campo):   " + arbol1.tamanio());
+        arbol1.insertar(5);
+        System.out.println("Despues de insertar 5 -> Nodos: " + arbol1.contarNodos() + "  Tamanio: " + arbol1.tamanio());
+        arbol1.eliminar(5);
+        System.out.println("Despues de eliminar 5 -> Nodos: " + arbol1.contarNodos() + "  Tamanio: " + arbol1.tamanio());
+
+        
     }
 }
