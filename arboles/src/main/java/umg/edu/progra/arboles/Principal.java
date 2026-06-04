@@ -185,7 +185,42 @@ public class Principal {
         arbol5.imprimirArbol();
         System.out.print("InOrden despues (descendente): ");
         arbol5.inOrden();
-
         
+        //Carlos Ramos 0905 23 14141
+        
+        //Problema EXTRA E1 — kEsimoMenor
+       
+        ArbolBinarioBusqueda arbolE1 = new ArbolBinarioBusqueda();
+        int[] valsE1 = { 50, 30, 70, 20, 40, 60, 80, 10 };
+        for (int v : valsE1) arbolE1.insertar(v);
+
+        System.out.println("\n========== EXTRA E1: kEsimoMenor ==========");
+        System.out.print("InOrden de referencia: ");
+        arbolE1.inOrden();
+        System.out.println("El 1er menor: " + arbolE1.kEsimoMenor(1));
+        System.out.println("El 3er menor: " + arbolE1.kEsimoMenor(3));
+        System.out.println("El 8vo menor: " + arbolE1.kEsimoMenor(8));
+        try {
+            arbolE1.kEsimoMenor(0);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Excepcion para k=0: " + e.getMessage());
+        }
+        
+        //Carlos Ramos 0905 23 14141
+        
+        //Problema EXTRA E2 — imprimirRangoOrdenado
+
+        ArbolBinarioBusqueda arbolE2 = new ArbolBinarioBusqueda();
+        int[] valsE2 = { 50, 30, 70, 20, 40, 60, 80, 10 };
+        for (int v : valsE2) arbolE2.insertar(v);
+
+        System.out.println("\n========== EXTRA E2: imprimirRangoOrdenado ==========");
+        System.out.print("Valores en [20, 60]: ");
+        arbolE2.imprimirRangoOrdenado(20, 60);
+        System.out.print("Valores en [1, 35]:  ");
+        arbolE2.imprimirRangoOrdenado(1, 35);
+        System.out.print("Valores en [50, 80]: ");
+        arbolE2.imprimirRangoOrdenado(50, 80);
+     
     }
 }

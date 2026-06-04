@@ -387,6 +387,52 @@ public class ArbolBinarioBusqueda {
          invertirRecursivo(nodo.derecho);
      }
     
+    //Carlos Ramos 0905 23 14141
+     
+    //Problema EXTRA E1 — kEsimoMenor
+
+    public int kEsimoMenor(int k) {
+        if (k < 1 || k > tamanio) {
+            throw new IllegalArgumentException("k fuera de rango: " + k);
+        }
+        int[] contador = {0};
+        int[] resultado = {Integer.MIN_VALUE};
+        kEsimoMenorRecursivo(raiz, k, contador, resultado);
+        return resultado[0];
+    }
+
+    private void kEsimoMenorRecursivo(Nodo nodo, int k, int[] contador, int[] resultado) {
+        if (nodo == null) return;
+        kEsimoMenorRecursivo(nodo.izquierdo, k, contador, resultado);
+        contador[0]++;
+        if (contador[0] == k) {
+            resultado[0] = nodo.dato;
+            return;
+        }
+        kEsimoMenorRecursivo(nodo.derecho, k, contador, resultado);
+    }
+    
+     //Carlos Ramos 0905 23 14141
+    
+     ///Problema EXTRA E2 — imprimirRangoOrdenado
+
+     public void imprimirRangoOrdenado(int min, int max) {
+         imprimirRangoRecursivo(raiz, min, max);
+         System.out.println();
+     }
+
+     private void imprimirRangoRecursivo(Nodo nodo, int min, int max) {
+         if (nodo == null) return;
+         if (nodo.dato > min) {
+             imprimirRangoRecursivo(nodo.izquierdo, min, max);
+         }
+         if (nodo.dato >= min && nodo.dato <= max) {
+             System.out.print(nodo.dato + " ");
+         }
+         if (nodo.dato < max) {
+             imprimirRangoRecursivo(nodo.derecho, min, max);
+         }
+     }
     
     // ============================================================
     // COLA INTERNA (lista enlazada simple) usada para BFS.
